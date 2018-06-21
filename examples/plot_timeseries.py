@@ -20,13 +20,13 @@ timeseries_data = ulysses.swics_abundances(starttime, endtime)
 # timeseries_data is a TimeSeries data type
 # Using the timeseries.data function, one can obtain the Pandas DataFrame of the data
 
-print(timeseries_data.data.keys())
+print(timeseries_data.keys())
 fig, axs = plt.subplots(2, 1, sharex=True)
-axs[0].plot(timeseries_data.data['VEL_ALPHA'])
+axs[0].plot(timeseries_data['VEL_ALPHA'])
 axs[1].set_yscale('log')
-axs[1].plot(timeseries_data.data['RAT_C6_C5'])
-axs[1].plot(timeseries_data.data['RAT_O7_O6'])
-axs[1].plot(timeseries_data.data['RAT_FE_O'])
+axs[1].plot(timeseries_data['RAT_C6_C5'])
+axs[1].plot(timeseries_data['RAT_O7_O6'])
+axs[1].plot(timeseries_data['RAT_FE_O'])
 
 for ax in axs:
     ax.legend()
